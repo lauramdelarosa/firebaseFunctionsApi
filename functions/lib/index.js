@@ -18,7 +18,7 @@ exports.webApi = functions.https.onRequest(main);
 
 //methods
 app.get('/warmup', async (request, response) => {
-    response.send('Warming up friendssssssssss.');
+    response.json({result:'Warming up friendssssssssss.'});
 });
 
 app.get('/warmupes', (request, response) => {
@@ -178,9 +178,9 @@ app.post('/login', async (request, response) => {
                     console.log('si se encontro un usuario')
                     if (data.email == "laura@gmail.com" && data.pass == "laura123") {
                         console.log('el usuario es admin')
-                        response.status(200).send("ADMIN"); //////////////////
+                        response.status(200).json({result : "ADMIN"}); //////////////////
                     } else {
-                        response.status(200).send("USER"); //////////////////
+                        response.status(200).json({result :"USER"}); //////////////////
                     }
                 });
             })
